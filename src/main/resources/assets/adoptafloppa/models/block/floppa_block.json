@@ -1,0 +1,25 @@
+{
+    "parent": "block/block",
+    "textures": {
+        "back": "adoptafloppa:block/floppa_back",
+        "left": "adoptafloppa:block/floppa_side",
+        "right": "adoptafloppa:block/floppa_side_r",
+        "top": "adoptafloppa:block/floppa_top",
+				"bottom": "adoptafloppa:block/floppa_bottom",
+        "front": "adoptafloppa:block/floppa",
+        "particle": "adoptafloppa:block/floppa_bottom"
+    },
+    "elements": [
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom", "cullface": "down" },
+                "up":    { "uv": [ 0, 16, 16, 0 ], "texture": "#top", "cullface": "up" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#front", "cullface": "north" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#back", "cullface": "south" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#right", "cullface": "west" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#left", "cullface": "east" }
+            }
+        }
+    ]
+}

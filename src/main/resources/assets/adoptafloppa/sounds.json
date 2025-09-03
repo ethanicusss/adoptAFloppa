@@ -1,0 +1,80 @@
+{
+  "boom": {
+    "subtitle": "subtitles.adoptafloppa.boom",
+    "sounds": [
+      "adoptafloppa:boom"
+    ]
+  },
+	"yippee": {
+    "subtitle": "subtitles.adoptafloppa.yippee",
+    "sounds": [
+      "adoptafloppa:yippee"
+    ]
+  },
+	"fart": {
+    "subtitle": "subtitles.adoptafloppa.fart",
+    "sounds": [
+      "adoptafloppa:fart"
+    ]
+  },
+	"augh": {
+    "subtitle": "subtitles.adoptafloppa.augh",
+    "sounds": [
+      "adoptafloppa:augh"
+    ]
+  },
+	"amogilive": {
+    "subtitle": "subtitles.adoptafloppa.amogilive",
+    "sounds": [
+      "adoptafloppa:amogilive"
+    ]
+  },
+	"ghibli": {
+    "subtitle": "subtitles.adoptafloppa.ghibli",
+    "sounds": [
+      "adoptafloppa:ghibli"
+    ]
+  },
+	"rapture": {
+    "subtitle": "subtitles.adoptafloppa.rapture",
+    "sounds": [
+      "adoptafloppa:rapture"
+    ]
+  },
+	"horn": {
+    "subtitle": "subtitles.adoptafloppa.horn",
+    "sounds": [
+      "adoptafloppa:horn"
+    ]
+  },
+	"this_shit_aint_working": {
+    "subtitle": "subtitles.adoptafloppa.this_shit_aint_working",
+    "sounds": [
+      "adoptafloppa:this_shit_aint_working"
+    ]
+  },
+	"space_core": {
+    "subtitle": "subtitles.adoptafloppa.space_core",
+    "sounds": [
+      "adoptafloppa:space_core"
+    ]
+  },
+	"ryan_gosling": {
+    "subtitle": "subtitles.adoptafloppa.ryan_gosling",
+    "sounds": [
+      "adoptafloppa:ryan_gosling"
+    ]
+  },
+	"rizz": {
+    "subtitle": "subtitles.adoptafloppa.rizz",
+    "sounds": [
+      "adoptafloppa:rizz"
+    ]
+  },
+	"splat": {
+    "subtitle": "subtitles.adoptafloppa.splat",
+    "sounds": [
+      "adoptafloppa:splat"
+    ]
+  }
+}

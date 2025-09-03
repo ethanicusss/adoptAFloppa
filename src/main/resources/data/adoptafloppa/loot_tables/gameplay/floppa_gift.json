@@ -1,0 +1,81 @@
+{
+  "type": "minecraft:barter",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "minecraft:player_head"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "minecraft:dirt"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "adoptafloppa:orca_item"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "adoptafloppa:kitney_item"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "adoptafloppa:bebe_item"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "adoptafloppa:human_dog_item"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "adoptafloppa:amogus_item"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "adoptafloppa:ghibli_item"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "adoptafloppa:rapture_item"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "adoptafloppa:horn_item"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "adoptafloppa:this_shit_aint_working_item"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "adoptafloppa:floppa_block"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "adoptafloppa:amogus_block"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "adoptafloppa:cirno_block"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "adoptafloppa:block/floppa_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "adoptafloppa:block/floppa_block"
+    },
+    "facing=south": {
+      "model": "adoptafloppa:block/floppa_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "adoptafloppa:block/floppa_block",
+      "y": 270
+    }
+  }
+}

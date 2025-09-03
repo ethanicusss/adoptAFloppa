@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "adoptafloppa:block/amogus_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "adoptafloppa:block/amogus_block"
+    },
+    "facing=south": {
+      "model": "adoptafloppa:block/amogus_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "adoptafloppa:block/amogus_block",
+      "y": 270
+    }
+  }
+}
