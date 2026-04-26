@@ -32,6 +32,8 @@ public class ModSounds{
     public static SoundEvent RIZZ_EVENT = new SoundEvent(RIZZ_ID);
     public static final Identifier SPLAT_ID = new Identifier(AdoptAFloppa.MOD_ID, "splat");
     public static SoundEvent SPLAT_EVENT = new SoundEvent(SPLAT_ID);
+    public static final Identifier BWOOF_ID = new Identifier(AdoptAFloppa.MOD_ID, "bwoof");
+    public static SoundEvent BWOOF_EVENT = new SoundEvent(BWOOF_ID);
 
     public static void registerSounds() {
         Registry.register(Registry.SOUND_EVENT, BOOM_ID, BOOM_EVENT);
@@ -47,5 +49,6 @@ public class ModSounds{
         Registry.register(Registry.SOUND_EVENT, RYAN_GOSLING_ID, RYAN_GOSLING_EVENT);
         Registry.register(Registry.SOUND_EVENT, RIZZ_ID, RIZZ_EVENT);
         Registry.register(Registry.SOUND_EVENT, SPLAT_ID, SPLAT_EVENT);
+        Registry.register(Registry.SOUND_EVENT, BWOOF_ID, BWOOF_EVENT);
     }
 }

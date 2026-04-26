@@ -1,6 +1,7 @@
 {
 	"itemGroup.adoptafloppa.floppa_item_group": "Adopt a Floppa",
 	"item.adoptafloppa.amazon_delivery": "Amazon Delivery",
+	"item.adoptafloppa.radioactive_slop": "Radioactive Slop",
 	"item.adoptafloppa.orca_item": "Orca Item",
 	"item.adoptafloppa.kitney_item": "Kitteny",
 	"item.adoptafloppa.bebe_item": "fart",
@@ -15,6 +16,7 @@
 	"item.adoptafloppa.ryan_gosling_item": "ryan gosling",
 	"item.adoptafloppa.rizz_item": "rizz",
 	"item.adoptafloppa.jabba_item": "jabba",
+	"item.adoptafloppa.bwoof_item": "awugh...",
 	"block.adoptafloppa.floppa_block": "Flube",
 	"block.adoptafloppa.amogus_block": "Amogus",
 	"block.adoptafloppa.cirno_block": "Cirno Plush",
@@ -32,5 +34,6 @@
 	"subtitles.adoptafloppa.space_core": "SPAAAAACE",
 	"subtitles.adoptafloppa.ryan_gosling": "i drive..",
 	"subtitles.adoptafloppa.rizz": "bowowowow",
-	"subtitles.adoptafloppa.splat": "splat"
+	"subtitles.adoptafloppa.splat": "splat",
+    "subtitles.adoptafloppa.bwoof": "awugh"
 }

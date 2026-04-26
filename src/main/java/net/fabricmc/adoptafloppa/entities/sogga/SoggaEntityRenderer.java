@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 public class SoggaEntityRenderer extends MobEntityRenderer<SoggaEntity, SoggaEntityModel> {
 
     public SoggaEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, new SoggaEntityModel(context.getPart(AdoptAFloppaClient.MODEL_SOGGA_LAYER)), 0.5f);
+        super(context, new SoggaEntityModel(context.getPart(AdoptAFloppaClient.MODEL_SOGGA_LAYER)), 1.0f);
     }
 
     @Override

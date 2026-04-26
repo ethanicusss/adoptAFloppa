@@ -21,6 +21,7 @@ public class ModItems {
     public static final Item HUMAN_DOG_ITEM = new AughItem(new FabricItemSettings().group(AdoptAFloppa.FLOPPA_ITEM_GROUP));
     public static final Item THE_DOG_ITEM = new SoundItem(new FabricItemSettings().group(AdoptAFloppa.FLOPPA_ITEM_GROUP), ModSounds.BOOM_EVENT, 5);
     public static final Item AMAZON_DELIVERY = new AmazonDelivery(new FabricItemSettings().group(AdoptAFloppa.FLOPPA_ITEM_GROUP));
+    public static final Item RADIOACTIVE_SLOP = new RadioactiveSlopItem(new FabricItemSettings().group(AdoptAFloppa.FLOPPA_ITEM_GROUP));
     public static final Item AMOGUS_ITEM = new SoundItem(new FabricItemSettings().group(AdoptAFloppa.FLOPPA_ITEM_GROUP), ModSounds.AMOGUS_EVENT, 5);
     public static final Item GHIBLI_ITEM = new SoundItem(new FabricItemSettings().group(AdoptAFloppa.FLOPPA_ITEM_GROUP), ModSounds.GHIBLI_EVENT, 0);//contest
     public static final Item RAPTURE_ITEM = new SoundItem(new FabricItemSettings().group(AdoptAFloppa.FLOPPA_ITEM_GROUP), ModSounds.RAPTURE_EVENT, 5);//contest
@@ -30,6 +31,7 @@ public class ModItems {
     public static final Item RYAN_GOSLING_ITEM = new SoundItem(new FabricItemSettings().group(AdoptAFloppa.FLOPPA_ITEM_GROUP), ModSounds.RYAN_GOSLING_EVENT, 0);//appa
     public static final Item RIZZ_ITEM = new SoundItem(new FabricItemSettings().group(AdoptAFloppa.FLOPPA_ITEM_GROUP), ModSounds.RIZZ_EVENT, 0);//short
     public static final Item JABBA_ITEM = new SoundItem(new FabricItemSettings().group(AdoptAFloppa.FLOPPA_ITEM_GROUP), ModSounds.SPLAT_EVENT, 0);
+    public static final Item BWOOF_ITEM = new SoundItem(new FabricItemSettings().group(AdoptAFloppa.FLOPPA_ITEM_GROUP), ModSounds.BWOOF_EVENT, 0);
     public static void registerItems() {
         Registry.register(Registry.ITEM, new Identifier(AdoptAFloppa.MOD_ID, "orca_item"), ORCA_ITEM);
         Registry.register(Registry.ITEM, new Identifier(AdoptAFloppa.MOD_ID, "kitney_item"), KITNEY_ITEM);
@@ -45,6 +47,8 @@ public class ModItems {
         Registry.register(Registry.ITEM, new Identifier(AdoptAFloppa.MOD_ID, "ryan_gosling_item"), RYAN_GOSLING_ITEM);
         Registry.register(Registry.ITEM, new Identifier(AdoptAFloppa.MOD_ID, "rizz_item"), RIZZ_ITEM);
         Registry.register(Registry.ITEM, new Identifier(AdoptAFloppa.MOD_ID, "jabba_item"), JABBA_ITEM);
+        Registry.register(Registry.ITEM, new Identifier(AdoptAFloppa.MOD_ID, "bwoof_item"), BWOOF_ITEM);
         Registry.register(Registry.ITEM, new Identifier(AdoptAFloppa.MOD_ID, "amazon_delivery"), AMAZON_DELIVERY);
+        Registry.register(Registry.ITEM, new Identifier(AdoptAFloppa.MOD_ID, "radioactive_slop"), RADIOACTIVE_SLOP);
     }
 }

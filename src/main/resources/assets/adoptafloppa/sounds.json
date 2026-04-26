@@ -76,5 +76,11 @@
     "sounds": [
       "adoptafloppa:splat"
     ]
+  },
+    "bwoof": {
+    "subtitle": "subtitles.adoptafloppa.bwoof",
+    "sounds": [
+      "adoptafloppa:bwoof"
+    ]
   }
 }

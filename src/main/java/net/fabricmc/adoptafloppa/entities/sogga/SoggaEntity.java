@@ -1,5 +1,6 @@
 package net.fabricmc.adoptafloppa.entities.sogga;
 
+import net.fabricmc.adoptafloppa.AdoptAFloppa;
 import net.fabricmc.adoptafloppa.registry.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
@@ -19,6 +20,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
+import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.*;
@@ -153,19 +155,20 @@ public class SoggaEntity extends HostileEntity implements SkinOverlayOwner, Rang
             if (entity != null) {
                 double d = vec3d.y;
                 double h = switch (this.getPhase()) {
-                    case "Wither" -> 5.0;
+                    case "Wither" -> 2.0;
                     case "Sand" -> 10.0;
                     case "Arrow" -> 4.0;
-                    case "Ghast" -> 10.0;
-                    case "Blaze" -> 10.0;
+                    case "Ghast" -> 6.0;
+                    case "Blaze" -> 15.0;
                     default -> 5.0;
                 };
-                if (this.getY() < entity.getY() || !this.shouldRenderOverlay() && this.getY() < entity.getY() + 5.0) {
+                if ((this.getY() < entity.getY() || !this.shouldRenderOverlay() && this.getY() < entity.getY() + 5.0) || this.shouldRenderOverlay()) {
+                    if (this.shouldRenderOverlay()){ h/=2; }
                     d = Math.max(0.0, d);
                     d += 0.3 - d * 0.6000000238418579;
                 }
 
-                vec3d = new Vec3d(vec3d.x, d, vec3d.z);
+                vec3d = new Vec3d(vec3d.x, d+(((entity.getY()+h)-this.getY())/5), vec3d.z);
                 Vec3d vec3d2 = new Vec3d(entity.getX() - this.getX(), 0.0, entity.getZ() - this.getZ());
 
                 double r = switch (this.getPhase()) {
@@ -173,7 +176,7 @@ public class SoggaEntity extends HostileEntity implements SkinOverlayOwner, Rang
                     case "Sand" -> 0.0;
                     case "Arrow" -> 25.0;
                     case "Ghast" -> 40.0;
-                    case "Blaze" -> 100.0;
+                    case "Blaze" -> 20.0;
                     default -> 9.0;
                 };
                 if (vec3d2.horizontalLengthSquared() > r) {
@@ -346,9 +349,9 @@ public class SoggaEntity extends HostileEntity implements SkinOverlayOwner, Rang
                             }
                             break;
                         case "Ghast":
-                            if (this.age % 20 == 0) {
+                            if (this.age % 8 == 0) {
                                 double _x = this.getX() + (this.random.nextFloat() - 0.5)*2*10;
-                                double _y = this.getY() + 5.0;
+                                double _y = this.getY() + 10.0;
                                 double _z = this.getZ() + (this.random.nextFloat() - 0.5)*2*10;
                                 /*for (int _i = 0; _i < 40; _i++) {
                                     this.world.addParticle(ParticleTypes.HEART, _x, _y - (this.random.nextFloat()) * 10 - 10, _z, 0.0, 0.0, 0.0);
@@ -357,31 +360,37 @@ public class SoggaEntity extends HostileEntity implements SkinOverlayOwner, Rang
                                 clientParticleX = _x;
                                 clientParticleY = _y - (this.random.nextFloat()) * 10 - 10;
                                 clientParticleZ = _z;
-                                FireballEntity fireball = new FireballEntity(EntityType.FIREBALL, this.world);
-                                fireball.setPosition(_x, _y, _z);
-                                fireball.setVelocity(0, -1, 0);
-                                this.world.spawnEntity(fireball);
+                                ShulkerBulletEntity crystal = new ShulkerBulletEntity(EntityType.SHULKER_BULLET, this.world);
+                                crystal.setPosition(_x, _y, _z);
+                                this.world.spawnEntity(crystal);
                             }
                             break;
                         case "Blaze":
-                            if (this.age % 2 == 0) {
-                                this.playSound(SoundEvents.ENTITY_BLAZE_SHOOT, 1.0F, 1.0F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
-                                double angle = this.random.nextFloat() * 360;
-                                double _x = 1 * Math.sin(angle);
-                                double _y = (this.random.nextFloat()) * -2 - 0.5;
-                                double _z = 1 * Math.cos(angle);
-                                /*for (int _i = 0; _i < 10; _i++) {
-                                    this.world.addParticle(ParticleTypes.HEART, this.getX() + (this.random.nextFloat() - 0.5)*2, this.getY() - (this.random.nextFloat() - 0.5) * 5, this.getZ() + (this.random.nextFloat() - 0.5)*2, 0.0, 1.0, 0.0);
-                                }*/
-                                clientParticleAmount = 10;
-                                clientParticleX = this.getX() + (this.random.nextFloat() - 0.5)*2;
-                                clientParticleY = this.getY() - (this.random.nextFloat() - 0.5) * 5;
-                                clientParticleZ = this.getZ() + (this.random.nextFloat() - 0.5)*2;
-                                SmallFireballEntity fireball = new SmallFireballEntity(EntityType.SMALL_FIREBALL, this.world);
-                                fireball.setPosition(this.getX(), this.getY() - 1.0, this.getZ());
-                                fireball.setVelocity(_x, _y, _z);
-                                this.world.spawnEntity(fireball);
-                            }
+                            //every tick
+                            this.playSound(SoundEvents.ENTITY_DROWNED_SHOOT, 0.8F, 0.5F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
+                            double angle = this.random.nextFloat() * 360;
+                            double _x = 1 * Math.sin(angle);
+                            double _y = (this.random.nextFloat()) * -2+0.1;
+                            double _z = 1 * Math.cos(angle);
+                            /*for (int _i = 0; _i < 10; _i++) {
+                                this.world.addParticle(ParticleTypes.HEART, this.getX() + (this.random.nextFloat() - 0.5)*2, this.getY() - (this.random.nextFloat() - 0.5) * 5, this.getZ() + (this.random.nextFloat() - 0.5)*2, 0.0, 1.0, 0.0);
+                            }*/
+
+                            this.addVelocity(0, 0.01, 0);
+
+                            clientParticleAmount = 10;
+                            clientParticleX = this.getX() + (this.random.nextFloat() - 0.5)*2;
+                            clientParticleY = this.getY() - (this.random.nextFloat() - 0.5) * 5;
+                            clientParticleZ = this.getZ() + (this.random.nextFloat() - 0.5)*2;
+                            SpectralArrowEntity fireball = new SpectralArrowEntity(EntityType.SPECTRAL_ARROW, this.world);
+                            fireball.setPosition(this.getX(), this.getY() - 1.0, this.getZ());
+                            fireball.setVelocity(_x, _y, _z);
+                            fireball.age = 1199;//so arrow despawns on land
+                            NbtCompound nbt = new NbtCompound();
+                            nbt.putShort("life", (short)1299);
+                            fireball.readCustomDataFromNbt(nbt);
+                            fireball.setDamage(8);
+                            this.world.spawnEntity(fireball);
                             break;
                     }
                 } else {
@@ -400,7 +409,9 @@ public class SoggaEntity extends HostileEntity implements SkinOverlayOwner, Rang
 
             if (clientParticleAmount > 0){
                 for (int _i = 0; _i < clientParticleAmount; _i++) {
-                    MinecraftClient.getInstance().world.addParticle(ParticleTypes.FLAME, clientParticleX, clientParticleY - (this.random.nextFloat()) * 10 - 10, clientParticleZ, 0.0, 0.0, 0.0);
+                    if (MinecraftClient.getInstance().world != null) {
+                        MinecraftClient.getInstance().world.addParticle(ParticleTypes.END_ROD, clientParticleX, clientParticleY - (this.random.nextFloat()) * 10 - 10, clientParticleZ, 0.0, 0.0, 0.0);
+                    }
                 }
                 clientParticleAmount = 0;
             }
@@ -500,7 +511,7 @@ public class SoggaEntity extends HostileEntity implements SkinOverlayOwner, Rang
 
     protected void dropEquipment(DamageSource source, int lootingMultiplier, boolean allowDrops) {
         super.dropEquipment(source, lootingMultiplier, allowDrops);
-        ItemEntity itemEntity = this.dropItem(ModItems.BEBE_ITEM);
+        ItemEntity itemEntity = this.dropItem(ModItems.BWOOF_ITEM);
         if (itemEntity != null) {
             itemEntity.setCovetedItem();
         }
@@ -520,7 +531,7 @@ public class SoggaEntity extends HostileEntity implements SkinOverlayOwner, Rang
     }
 
     public static DefaultAttributeContainer.Builder createSoggaAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 250.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.6000000238418579).add(EntityAttributes.GENERIC_FLYING_SPEED, 0.6000000238418579).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 100.0).add(EntityAttributes.GENERIC_ARMOR, 4.0);
+        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 300.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.6000000238418579).add(EntityAttributes.GENERIC_FLYING_SPEED, 0.6000000238418579).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 100.0).add(EntityAttributes.GENERIC_ARMOR, 4.0);
     }
 
     public int getInvulnerableTimer() {

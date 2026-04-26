@@ -33,7 +33,7 @@ public class AdoptAFloppa implements ModInitializer {
 	public static final EntityType<SoggaEntity> SOGGA = Registry.register(
 			Registry.ENTITY_TYPE,
 			new Identifier(AdoptAFloppa.MOD_ID, "sogga"),
-			FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, SoggaEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+			FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, SoggaEntity::new).dimensions(EntityDimensions.fixed(1.5f, 1.5f)).build()
 	);
 
 	@Override
